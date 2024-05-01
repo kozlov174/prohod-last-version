@@ -1,0 +1,16 @@
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\bin\Debug\net7.0\Prohod.Infrastructure.deps.json
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\bin\Debug\net7.0\Prohod.Infrastructure.dll
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\bin\Debug\net7.0\Prohod.Infrastructure.pdb
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\bin\Debug\net7.0\Prohod.Domain.dll
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\bin\Debug\net7.0\Prohod.Domain.pdb
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.AssemblyInfo.cs
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.sourcelink.json
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.csproj.CopyComplete
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.dll
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\refint\Prohod.Infrastructure.dll
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\Prohod.Infrastructure.pdb
+C:\Users\d.d.kozlov\RiderProjects\prohod-backend2\Prohod.Infrastructure\obj\Debug\net7.0\ref\Prohod.Infrastructure.dll
