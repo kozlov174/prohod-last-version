@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zdDXYMWp5ysMkpaRe3wE1fqlYRG1rj5CrY+/m/mmhr1CYLSb4tK2r+IU3wO5FsLr6RHvbG0AUT1DK73AWy/v+Q==",
+  "dgSpecHash": "nG47IiwrEH7QVuX+PpHZobgulB9xPcxuNvmN36Sv+8hZiVrcQCEXefa0qQv0QCJB8H4ISgsoa1S3ueCYGdmQCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.WebApi\\Prohod.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.WebApi\\Prohod.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\d.d.kozlov\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\d.d.kozlov\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

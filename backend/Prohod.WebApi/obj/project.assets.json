@@ -2647,11 +2647,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.WebApi\\Prohod.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.WebApi\\Prohod.WebApi.csproj",
       "projectName": "Prohod.WebApi",
-      "projectPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.WebApi\\Prohod.WebApi.csproj",
+      "projectPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.WebApi\\Prohod.WebApi.csproj",
       "packagesPath": "C:\\Users\\d.d.kozlov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\d.d.kozlov\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2666,8 +2666,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.Infrastructure\\Prohod.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.Infrastructure\\Prohod.Infrastructure.csproj"
+            "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.Infrastructure\\Prohod.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.Infrastructure\\Prohod.Infrastructure.csproj"
             }
           }
         }

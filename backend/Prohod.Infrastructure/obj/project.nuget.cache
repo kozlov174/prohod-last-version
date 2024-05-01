@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "THdAAH0prlXmz3QC6s6JSWqXBCu6TVqCSj3WEVtJaHxiADgoPi6vRCRsoWIddouXZmC3Y0aFyb7JEUdDfSGNRg==",
+  "dgSpecHash": "0ex8DKdBXOuIj4ev4CO8ir4fqDWsmPPA9n5NuPcnCcvYR4AHPp6+VROghIW1jfliyw3x9fpNxu2oFiDABgtIiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.Infrastructure\\Prohod.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.Infrastructure\\Prohod.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\d.d.kozlov\\.nuget\\packages\\bouncycastle.cryptography\\2.1.1\\bouncycastle.cryptography.2.1.1.nupkg.sha512",
     "C:\\Users\\d.d.kozlov\\.nuget\\packages\\kontur.results\\1.0.1\\kontur.results.1.0.1.nupkg.sha512",

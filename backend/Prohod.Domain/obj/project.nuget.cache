@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N2Z5hB2fgRGYzXPg2yJusNPkhhZruXVlsqfWmxqPAHrr+fPMOy0J1EiU2DXsPskCRdY5cmyEl+oOmWOavoBEyA==",
+  "dgSpecHash": "ipr4pzKNBjsC99dEbtxjPgT4wYAnmZFzoB22jHEumDCej7+S2/9SaqzKA85phflUZT2vfgDL0pOhPC7NSi0k2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.Domain\\Prohod.Domain.csproj",
+  "projectFilePath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.Domain\\Prohod.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\d.d.kozlov\\.nuget\\packages\\kontur.results\\1.0.1\\kontur.results.1.0.1.nupkg.sha512",
     "C:\\Users\\d.d.kozlov\\.nuget\\packages\\kontur.results.monad\\1.0.1\\kontur.results.monad.1.0.1.nupkg.sha512",

@@ -113,11 +113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.Domain\\Prohod.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.Domain\\Prohod.Domain.csproj",
       "projectName": "Prohod.Domain",
-      "projectPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.Domain\\Prohod.Domain.csproj",
+      "projectPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.Domain\\Prohod.Domain.csproj",
       "packagesPath": "C:\\Users\\d.d.kozlov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\backend\\Prohod.Domain\\obj\\",
+      "outputPath": "C:\\Users\\d.d.kozlov\\RiderProjects\\prohod-backend2\\prohod-last-version\\backend\\Prohod.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\d.d.kozlov\\AppData\\Roaming\\NuGet\\NuGet.Config"
