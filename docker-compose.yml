@@ -31,7 +31,7 @@ services:
   frontend:
     container_name: frontend
     build:
-      context: ./frontend/la/
+      context: ./frontend/build/
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
