@@ -33,8 +33,10 @@ services:
     build:
       context: ./frontend/la/
       dockerfile: Dockerfile
+    command:
+      - 'npm start'
     ports:
-      - "4000:3000"
+      - "3006:3006"
     restart: always
   
   database:
