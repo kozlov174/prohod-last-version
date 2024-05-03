@@ -31,8 +31,10 @@ services:
   frontend:
     container_name: frontend
     build:
-      context: ./frontend/build/
+      context: ./frontend/
       dockerfile: Dockerfile
+    command:
+      - "serve -s build"
     ports:
       - "4000:4000"
     restart: always
