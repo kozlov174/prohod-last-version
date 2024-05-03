@@ -24,19 +24,16 @@ services:
       context: ./backend/
       dockerfile: Dockerfile
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:80"
     restart: always
   
   frontend:
     container_name: frontend
     build:
-      context: ./frontend/
+      context: ./frontend/la/
       dockerfile: Dockerfile
-    command:
-      - "serve -s build"
     ports:
-      - "4000:4000"
+      - "80:4000"
     restart: always
   
   database:
