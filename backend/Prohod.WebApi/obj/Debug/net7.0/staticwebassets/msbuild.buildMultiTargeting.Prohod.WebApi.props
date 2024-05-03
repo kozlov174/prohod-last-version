@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Prohod.WebApi.props" />
-</Project>
