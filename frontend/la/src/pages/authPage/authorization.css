@@ -23,51 +23,34 @@
 
 .authorization_form-buttons {
     position: absolute;
-    padding: 250px 0 0 169px;
+    padding: 198px 0 0 169px;
     margin: 0;
     justify-content: start;
 }
 
-.rect {
-    /*margin: 300px 5% 20% 100px;*/
-    /*width: 1100px;*/
-    /*height: 540px;*/
-    border-radius: 0 35px 35px 35px;
-    /*margin-left: 5%;*/
-    /*margin-top: 20%;*/
-    fill:#747A9B;
-    stroke:white;
-    stroke-width:2;
-    opacity:1;
+.authorization_form-button {
+    padding: 8px 0 0 2px;
+    position: absolute;
+    z-index: 9;
 }
 
-.authorization_form-button {
-    width: 438px;
-    height: 53px;
-    border: 3px white solid;
-    background-color: #747A9B;
+.authorization_enter-text {
+    padding: 20px 0 0 220px;
     color: white;
-    stroke-width: 2;
-    opacity: 1;
-    text-align: center;
-    border-radius: 35px 54px 0 0;
-    /*padding-bottom: 20px;*/
-    font-size: 32px;
-    font-weight: normal;
-    border-bottom: #747A9B;
+    font-size: 24pt;
     position: absolute;
-    border-right: #747A9B solid;
-    z-index: 1;
-    font-family: Gilroy;
+    z-index: 10;
 }
 
 .authorization-form {
     position: absolute;
-    width: 950px;
-    height: 300px;
+    width: 70%;
+    height: auto;
     background-color: #747A9B;
+    border: white 3px solid;
+    border-radius: 35px;
     padding: 90px 50px 50px 50px;
-    margin: 302px 0 0 171px;
+    margin: 250px 0 0 171px;
     z-index: 4;
     display: flex;
     flex-direction: column;
@@ -108,7 +91,8 @@ input {
     color: white;
 }
 
-.authorization-enter-button:hover, .authorization-enter-button:active {
+.authorization-enter-button:hover, 
+.authorization-enter-button:active {
     cursor: pointer;
     stroke-width: 2;
     border: #6BC8F4 solid;

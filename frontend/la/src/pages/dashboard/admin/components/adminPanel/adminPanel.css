@@ -8,32 +8,64 @@
     display: block; /*активные заявки. с none на block*/
 }
 
-.add-security-container {
-    position: absolute;
+.adminPanelModalWindow {
     width: 100%;
-    height: 430px;
-    z-index: 100; /*чтобы показать окно, нужно изменить z-index с 0 на 10*/
+}
+
+.add-security-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 12; /*чтобы показать окно, нужно изменить z-index с 0 на 10*/
+    display: grid;
+    align-items: center;
+    overflow-y: auto;
+    animation-duration: 0.15s;
+    animation-fill-mode: both;
+    animation-name: Opacity;
+}
+
+@keyframes Opacity {
+    0% {                
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {              
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.add-security-modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.add-security-modal.open .add-security-window {
+    transform: scale(1);
 }
 
 .visitor-information-window-container {
     position: absolute;
-    padding: 8em 0 0 8em;
+    padding: 10em 0 0 8em;
     width: 75%;
     height: 650px;
     z-index: 0; /*чтобы показать окно, нужно изменить z-index с 0 на 10*/
 }
 
 .add-security-window {
-    display: block; /*чтобы показать окно надо изменить свойство display с none на flex*/
-    width: 100%;
-    height: 100%;
+    display: flex; /*чтобы показать окно надо изменить свойство display с none на flex*/
+    max-width: 70%;
+    height: 65%;
     flex-direction: column;
     background-color: #121629;
     border: white 2px solid;
     border-radius: 35px;
     font-family: Gilroy;
-    position: absolute;
-    padding: 4em 4em 0 4em;
+    padding: 2em 4em 0 4em;
+    margin: 10vh 10vw 0 10vw;
 }
 
 .visitor-information-window {
@@ -46,6 +78,20 @@
     border-radius: 35px;
     position: absolute;
     padding: 4em 4em 0 4em;
+}
+
+.visitor-information-back {
+    background-color: #6BC8F4;
+    border: none;
+    font-size: 20px;
+    height: 40px;
+    width: 150px;
+    border-radius: 35px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    margin-top: 20px;
+    z-index: 20;
 }
 
 .visitor-information-back:hover, .accept-visitor:hover, .accept-visitor:active, .visitor-information-back:active, .add-security-button-add:hover, .add-security-button-add:active {
@@ -108,10 +154,17 @@
     margin-top: 20px;
 }
 
-.add-security-header, .visitor-information-header {
+.add-security-header {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 40px;
+    padding-bottom: 4vh;
+    padding-top: 0;
+}
+
+.visitor-information-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4vh;
 }
 
 .add-security-information-title {
@@ -121,11 +174,19 @@
     padding-left: 30em;
 }
 
-.add-security-title, .visitor-information-title {
+.add-security-title{
     font-size: 24px;
     color: white;
     position: absolute;
-    padding-left: 46.5em;
+    padding-left: 72vw;
+}
+
+.visitor-information-title{
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    padding-left: 52vw;
+    padding-top: 2vh;
 }
 
 .visitor-information-blue {
@@ -231,7 +292,7 @@ output {
     justify-content: space-between;
     position: absolute;
     z-index: 110;
-    margin-top: 7em;
+    margin-top: 18vh;
 }
 
 .add-security-title {
@@ -300,7 +361,6 @@ output {
     z-index: 100; /*тут переключается видимость кнопок в папке*/
 }
 
-.a
 
 .admin-panel-button2 {
     width: 438px;

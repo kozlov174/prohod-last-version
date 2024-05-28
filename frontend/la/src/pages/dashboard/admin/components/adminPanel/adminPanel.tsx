@@ -1,53 +1,52 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import './adminPanel.css'
-import Popup from 'reactjs-popup';
+import './adminPanel.css';
+import Modal from '../adminPanel/adminPanelModal/adminPanelModal';
+import { useState } from 'react';
 import logo from '../../../../../assets/images/logo.svg';
 import {Link,  Outlet} from "react-router-dom";
-import axios from 'axios';
 import admin_back_folder from '../../../../../assets/images/back-folder.svg';
 import admin_front_folder from '../../../../../assets/images/front-folder.svg';
 
 const AdminPanel = () => {
-   
-    const url = 'https://51.250.110.108/api/v1/visit-requests';
-    const offset = 0;
-    const limit = 10;
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiOTc2ZGRjN2QtZDg2Yy00MDc5LTk4MTYtZWVjOWYxNzEzODllIiwiZXhwIjoxNzE1NzY5MDM0LCJpc3MiOiJwcm9ob2QtYmFja2VuZCIsImF1ZCI6InByb2hvZC1mcm9udGVuZCJ9.1D_g2kpe9HRxFX_2eeFyB9igi02_oE-80MJlG3awl6c';
-
-    fetch(`${url}?offset=${offset}&limit=${limit}`, {
-        method:'GET',
-        headers: {
-            'accept': 'text/plain',
-            'Authorization': `Bearer ${token}`
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        const nameElement = document.getElementById('name');
-        const surnameElement = document.getElementById('surname');
-        const ageElement = document.getElementById('age');
+    // const url = 'http://51.250.30.39:8080/api/v1/visit-requests/apply';
+    // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNTRkMGU0MzctYTNkOS00ZGE5LTgyYmQtNTkyM2RmY2JjNWQ3IiwiZXhwIjoxNzE3MTUwNDkzLCJpc3MiOiJwcm9ob2QtYmFja2VuZCIsImF1ZCI6InByb2hvZC1mcm9udGVuZCJ9.PspTMCCq35W4rKPXSiZlmrY1-w_ImvprVQYGrgTF0ms';
       
-        // nameElement.innerHTML = data.name;
-        // surnameElement.innerHTML = data.surname;
-        // ageElement.innerHTML = data.age;
+        
+    // fetch(url, {
+    //     method:'GET',
+    //     headers: {
+    //         'accept': 'text/plain',
+    //         'Authorization': `Bearer ${token}`
+    //     }
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     const nameElement = document.getElementById('name');
+    //     const surnameElement = document.getElementById('surname');
+    //     const ageElement = document.getElementById('age');
       
-        console.log(data);
-    })
-    .catch(error => {
-        // Handle error
-        console.error(error);
-    });
+    //     // nameElement.innerHTML = data.name;
+    //     // surnameElement.innerHTML = data.surname;
+    //     // ageElement.innerHTML = data.age;
+      
+    //     console.log(data);
+    // })
+    // .catch(error => {
+    //     // Handle error
+    //     console.error(error);
+    // });
+    
+    const [showModal, setShowModal] = useState<boolean>(false);
+    const hideModal = () => {
+        setShowModal(false);
+    }
     const {id} = useParams();
     const click = () => {};
 
     return (
         <div>
-            {id}<>
-            {/*чтобы показать окно нижу надо изменить свойство visitor-information-window "display" с none на flex, а также
-z-index visitor-information-window-container с 0 на 10
-соответствующим образом с add-security.*/}
-
+            <>
             <svg className="line" width="90%" height={900} transform="translate(70 1)">
                     <line
                         x1={90}
@@ -108,41 +107,22 @@ z-index visitor-information-window-container с 0 на 10
                     <img className="logo-admin" src={logo}/>
                     <Link to="/dashboard/:id/user"><button className="personal-account-enter">Фамилия И.О</button></Link>
                 </div>
+                {/* АХАВСДБФОШВРГИЦНВГШЙЩЦЬЛДЙЛЬМОТШВЩЗДЦУМ */}
                 <div className="add-security">
-                    <Popup trigger={<button className="add-security-button">добавить безопасника</button>}>
-                        <div className="add-security-container">
-                            <div className="add-security-window">
-                                <div className="add-security-header">
-                                    <button type="button" className="visitor-information-back">
-                                        назад
-                                    </button>
-                                    <span className="visitor-information-title">добавление{" "}
-                                        <span className="visitor-information-blue">сотрудника</span>
-                                    </span>
-                                </div>
-                                <div className="full-name">
-                                    <input type="text" required placeholder="Фамилия" />
-                                    <input type="text" required placeholder="Имя" />
-                                    <input type="text" required placeholder="Отчество"/>
-                                </div>
-                                <div className="email">
-                                    <input type="text" required placeholder="Email" />
-                                </div>
-                                <div className="enter-data">
-                                    <input type="text" required placeholder="Логин" />
-                                    <input type="password" required placeholder="Пароль"/>
-                                    <input type="password" required placeholder="Подтвердите пароль*"/>
-                                </div>
-                                <div className="add-button">
-                                    <button type="button" className="add-security-button-add">
-                                        добавить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </Popup>
+                    <button onClick={() => {
+                        setShowModal(true);
+                    }} 
+                        id="add-security-button-click" 
+                        className="add-security-button">
+                            добавить сотрудника
+                    </button>
                     <span className="add-security-title">список <span className="add-security-title-blue">заявок</span> на вход</span>
                 </div>
+
+                <Modal active={showModal} onClose={hideModal}>
+                
+                </Modal>
+
                 <div className="searching-string">
                     <div className="searching-string" />
                 </div>
@@ -238,35 +218,9 @@ z-index visitor-information-window-container с 0 на 10
                     </button></Link>
                 </div>
                 <div className="add-security">
-                    <Popup trigger={<button className="add-security-button">добавить сотрудника</button>}>
-                        <div className="add-security-container">
-                            <div className="add-security-window">
-                                <div className="add-security-header">
-                                    <span className="add-security-information-title">добавление{" "}
-                                        <span className="visitor-information-blue">сотрудника</span>
-                                    </span>
-                                </div>
-                                <div className="full-name">
-                                    <input type="text" required placeholder="Фамилия" />
-                                    <input type="text" required placeholder="Имя" />
-                                    <input type="text" required placeholder="Отчество"/>
-                                </div>
-                                <div className="email">
-                                    <input type="text" required placeholder="Email" />
-                                </div>
-                                <div className="enter-data">
-                                    <input type="text" required placeholder="Логин" />
-                                    <input type="password" required placeholder="Пароль"/>
-                                    <input type="password" required placeholder="Подтвердите пароль*"/>
-                                </div>
-                                <div className="add-button">
-                                    <button type="button" className="add-security-button-add">
-                                        добавить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </Popup>
+                    <button onClick={() => {setShowModal(true);}} id='add-security-button-click' className="add-security-button">добавить сотрудника</button>
+                    <Modal active={showModal} onClose={hideModal}>
+                    </Modal>
                     <span className="add-security-title">список 
                     <span className="add-security-title-blue"> заявок </span> 
                     на вход</span>
@@ -365,11 +319,11 @@ z-index visitor-information-window-container с 0 на 10
                             <img src="" />
                         </button>
                     </div>
-                </div>
-                
+                </div>  
             </div>
         <Outlet/></>
         </div>
+        
     );
 };
 

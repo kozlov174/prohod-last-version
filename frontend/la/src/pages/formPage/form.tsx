@@ -12,36 +12,73 @@ type FormPageProps = {
 }
 
 const FormPage = () => {
-    // const [posts, setPosts] = useState([]);
-    // const [title, setTitle] = useState('');
-    // const [body, setBody] = useState('');
-    // const addPosts = async (title, body) => {
-    //     await fetch('http://51.250.107.27/api/v1/visit-requests/apply', {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //            title: title,
-    //            body: body,
-    //            userId: Math.random().toString(36).slice(2),
-    //          }),
-    //          headers: {
-    //            'Content-type': 'application/json; charset=UTF-8',
-    //          },
-    //     })
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //           setPosts((posts) => [data, ...posts]);
-    //           setTitle('');
-    //           setBody('');
-    //         })
-    //         .catch((err) => {
-    //           console.log(err.message);
-    //         });
-    // };
+    function sendData() {
+        const fullNameI = document.getElementById("fullNameInput") as HTMLInputElement;
+        const fullName = fullNameI.value;
+        const seriesI = document.getElementById("seriesInput") as HTMLInputElement;
+        const series = seriesI.value;
+        const numberI = document.getElementById("numberInput") as HTMLInputElement;
+        const number = numberI.value;
+        const whoIssuedI = document.getElementById("whoIssuedInput") as HTMLInputElement;
+        const whoIssued = whoIssuedI.value;
+        const issueDateI = document.getElementById("issueDateInput") as HTMLInputElement;
+        const issueDateDate = new Date(issueDateI.value);
+        const issueDate = issueDateDate.toISOString();
+        const visitTimeDate = document.getElementById("visitTimeDateInput") as HTMLInputElement;
+        const visitTimeTime = document.getElementById("visitTimeTimeInput") as HTMLInputElement;
+        const visitTimeI = new Date(visitTimeDate.value + " " + visitTimeTime.value);
+        const visitTime = visitTimeI.toISOString();
+        const visitReasonI = document.getElementById("visitReasonInput") as HTMLInputElement;
+        const visitReason = visitReasonI.value;
+        const userToVisitIdI = document.getElementById("userToVisitIdInput") as HTMLInputElement;
+        const userToVisitId = userToVisitIdI.value;
+        const emailToSendReplyI = document.getElementById("emailToSendReplyInput") as HTMLInputElement;
+        const emailToSendReply = emailToSendReplyI.value;
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     addPosts(title, body);
-    //  }; 
+        const url = "http://51.250.30.39:8080/api/v1/visit-requests/apply";
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNTRkMGU0MzctYTNkOS00ZGE5LTgyYmQtNTkyM2RmY2JjNWQ3IiwiZXhwIjoxNzE3MTUwNDkzLCJpc3MiOiJwcm9ob2QtYmFja2VuZCIsImF1ZCI6InByb2hvZC1mcm9udGVuZCJ9.PspTMCCq35W4rKPXSiZlmrY1-w_ImvprVQYGrgTF0ms";
+      
+        const data = {
+            form: {
+                passport: {
+                    fullName: fullName,
+                    series: series,
+                    number: number,
+                    whoIssued: whoIssued,
+                    issueDate: issueDate,
+                },
+                visitTime: visitTime,
+                visitReason: visitReason,
+                userToVisitId: userToVisitId,
+                emailToSendReply: emailToSendReply
+            }
+        };
+      
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response;
+        })
+        .then(data => {
+            // Обработка ответа от сервера
+            console.log(data);
+            alert("Форма успешно отправлена. Ожидайте заключения, оно придет к Вам на почту в течении трех дней.");
+          })
+          .catch(error => {
+            // Обработка ошибки
+            console.error(error);
+          });
+      }
+    
 
     const click = () => {
 
@@ -54,6 +91,15 @@ const FormPage = () => {
                     <img className="form-logo" src={logo} />
                     <img className="form-white-cat" src={catw} />
                 </div>
+                <svg className="line" width="100%" height={200} transform="translate(1 1)">
+                    <line
+                        x1={170}
+                        y1={120}
+                        x2={1370}
+                        y2={120}
+                        style={{ stroke: "white", strokeWidth: 2 }}
+                    />
+                </svg>
                 <div className="form-buttons">
                     <div className="folder-background">
                         <span className='form-folder-title'>заявка</span>
@@ -64,18 +110,13 @@ const FormPage = () => {
                 <div className="anon-form">
                     <legend>1. Заполните паспортные данные</legend>
                     <div className="full-name">
-                        <input title="" type="text" required placeholder="Фамилия" />
-                        <input title="" type="text" required placeholder="Имя" />
-                        <input
-                            type="text"
-                            required
-                            placeholder="Отчество"
-                            title=""
-                        />
+                        <input id='fullNameInput' className='fullName' title='' type='text' required placeholder='ФИО'/>
                     </div>
                     <div className="passport">
                         <input
                             type="text"
+                            id='seriesInput'
+                            className='series'
                             pattern="[0-9]{4}"
                             required
                             placeholder="Серия паспорта"
@@ -83,6 +124,8 @@ const FormPage = () => {
                         />
                         <input
                             type="text"
+                            id='numberInput'
+                            className='number'
                             pattern="[0-9]{6}"
                             required
                             placeholder="Номер паспорта"
@@ -90,13 +133,16 @@ const FormPage = () => {
                         />
                         <input
                             type="date"
-                            className="date"
+                            id='issueDateInput'
+                            className="issueDate"
                             required
                             title="Когда выдан паспорт?"
                         />
                     </div>
                     <div className="passport-textarea">
                         <textarea
+                            id='whoIssuedInput'
+                            className='whoIssued'
                             required
                             placeholder="Кем выдан?"
                             title=""
@@ -106,19 +152,24 @@ const FormPage = () => {
                     <legend>2. Уточните детали визита</legend>
                     <div className="visit-details">
                         <input
+                            id='visitTimeDateInput'
                             type="date"
                             className="date"
                             required
                             title="Дата посещения"
                         />
                         <input
+                            id='visitTimeTimeInput'
                             type="text"
+                            className='visitTime'
                             title=""
                             required
                             placeholder="Время посещения"
                         />
                         <input
+                            id='userToVisitIdInput'
                             type="text"
+                            className='userToVisitId'
                             required
                             placeholder="Кого посещаете?"
                             title=""
@@ -126,6 +177,8 @@ const FormPage = () => {
                     </div>
                     <div className="visit-reason">
                         <textarea
+                            id='visitReasonInput'
+                            className='visitReason'
                             required
                             placeholder="Цель визита"
                             title=""
@@ -134,7 +187,7 @@ const FormPage = () => {
                     </div>
                     <legend>3. Куда придет QR-код для посещения</legend>
                     <div className="email">
-                        <input title="" type="text" required placeholder="Email" />
+                        <input id='emailToSendReplyInput' className='emailToSendReply' title="" type="text" required placeholder="Email" />
                     </div>
                     <div className="anon-form-checkbox-submit">
                         <input
@@ -146,23 +199,12 @@ const FormPage = () => {
                             даю согласие на обработку персональных данных
                         </label>
                         <div className="anon-form-submit">
-                            <button onClick={() => alert("Форма успешно отправлена. Ожидайте заключения, оно придет к Вам на почту в течении трех дней.")}
+                            <button onClick={() => sendData()}
                                     type="submit" className="anon-form-submit-button">отправить
                             </button>
                         </div>
                     </div>
-                </div>
-                <svg className="line" width="100%" height={130} transform="translate(-1500 1)">
-                    <line
-                        x1={300}
-                        y1={120}
-                        x2={1500}
-                        y2={120}
-                        style={{ stroke: "white", strokeWidth: 2 }}
-                    />
-                </svg>
-                <form action="куда сохранятся результаты"></form>
-                
+                </div>                
             </div>
             
     );

@@ -4,14 +4,13 @@
 .personal-account-container {
     position: absolute;
     padding: 4em 0 0 8em;
-    width: 75%;
+    width: 83%;
     height: 450px;
     z-index: 0;
 }
 
 .logo-personal-account {
     display: flex;
-    justify-content: space-between;
 }
 
 .logo-personal-acc {
@@ -27,13 +26,13 @@
 
 .personal-account-enter-personal-acc {
     position: absolute;
-    margin: 2.5em 0 0 50em;
+    margin: 2.5em 0 0 80%;
     font-family: Gilroy;
     font-size: 20px;
     border: none;
     background-color: transparent;
     color: white;
-    z-index: 1;
+    z-index: 20;
 }
 
 .personal-account-enter:hover, .personal-account-enter:active {
@@ -45,14 +44,14 @@
 .personal-account {
     display: flex; /*чтобы показать окно надо изменить свойство display с none на flex*/
     height: 100%;
-    width: 90%;
+    width: 88%;
     flex-direction: column;
     background-color: #121629;
     border: white 2px solid;
     border-radius: 35px;
     font-family: Gilroy;
     position: absolute;
-    padding: 4em 4em 0 4em;
+    padding: 4em 0 0 4em;
 }
 
 .personal-account-back {
@@ -96,7 +95,7 @@
     font-size: 24px;
     color: white;
     position: absolute;
-    margin: 0 0 0 36em;
+    margin: 0 0 0 39em;
 }
 
 .personal-account-blue {

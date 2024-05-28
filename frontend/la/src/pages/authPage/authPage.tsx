@@ -3,25 +3,60 @@ import './authorization.css';
 import catw from '../../assets/images/cat-w.svg';
 import logo from '../../assets/images/logo.svg';
 import {Link,  Outlet} from "react-router-dom";
+import login_front_folder from '../../assets/images/front-folder.svg';
 
 function AuthPage() {
+    const offset = 0;
+    const limit = 10;
+    const url = 'http://51.250.30.39:8080/api/v1/users';
+    fetch(`${url}?offset=${offset}&limit=${limit}`, {
+        method:'GET',
+        headers: {
+            'accept': 'text/plain',
+            'Authorization': `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiN2Q4OWEyNWYtZTU0Zi00OWUzLThhZWYtODMwYmI0ODIxOGQyIiwiZXhwIjoxNzE1OTYxMjg1LCJpc3MiOiJwcm9ob2QtYmFja2VuZCIsImF1ZCI6InByb2hvZC1mcm9udGVuZCJ9.mo1XgWN7fXqZlXGHaXh5kcEt9IGVNtBouT8wq-cYYdY'}`
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const nameElement = document.getElementById('name');
+        const surnameElement = document.getElementById('surname');
+        const ageElement = document.getElementById('age');
+      
+    //     // nameElement.innerHTML = data.name;
+    //     // surnameElement.innerHTML = data.surname;
+    //     // ageElement.innerHTML = data.age;
+      
+        console.log(data);
+    })
+    .catch(error => {
+        // Handle error
+        console.error(error);
+    });
     return (
         <>
+            <svg className="line" width="90%" height={300} transform="translate(70 1)">
+                    <line
+                        x1={90}
+                        y1={120}
+                        x2={1290}
+                        y2={120}
+                        style={{ stroke: "white", strokeWidth: 2 }}
+                    />
+            </svg>
             <div className="logo-cat">
                 <img className="logo" src={logo}/>
                 <img className="white-cat" src={catw}/>
             </div>
             <div className="authorization_form-buttons">
-                <button className="authorization_form-button">
-                    <span>Вход</span>
-                </button>
+                <span className='authorization_enter-text'>вход</span>
+                <img className="authorization_form-button" src={login_front_folder} />
             </div>
             <div className="authorization-form">
                 <div className="login">
-                    <input type="text" required  placeholder="Логин"/>
+                    <input type="text" required  placeholder="логин"/>
                 </div>
                 <div className="password">
-                    <input type="password" title="" required placeholder="Пароль"/>
+                    <input type="password" title="" required placeholder="пароль"/>
                 </div>
                 <div className="authorization-enter">
                     <Link to="/dashboard/:id/admin"><button type="button"
@@ -29,87 +64,7 @@ function AuthPage() {
                     </button></Link>
                 </div>
             </div>
-            <svg className="line" width="100%" height={130} transform="translate(70 1)">
-                <line
-                    x1={506}
-                    y1={255}
-                    x2={578}
-                    y2={300}
-                    style={{ stroke: "white", strokeWidth: "2.5" }}
-                />
-                <line
-                    x1={100}
-                    y1={120}
-                    x2={1300}
-                    y2={120}
-                    style={{ stroke: "white", strokeWidth: 2 }}
-                />
-            </svg>
-            <svg
-                className="rectangle"
-                width="100%"
-                height={810}
-                transform="translate(70 1)"
-            >
-                <rect
-                    x={50}
-                    y={20}
-                    rx={35}
-                    ry={35}
-                    style={{
-                        width: 1300,
-                        height: 450,
-                        fill: "none",
-                        stroke: "white",
-                        strokeWidth: 2,
-                        opacity: 1
-                    }}
-                />
-                <rect
-                    x={100}
-                    y={300}
-                    rx={35}
-                    ry={35}
-                    style={{
-                        width: 1100,
-                        height: 500,
-                        marginLeft: "5%",
-                        marginTop: "20%",
-                        fill: "#747A9B",
-                        stroke: "white",
-                        strokeWidth: "2.5",
-                        opacity: 1
-                    }}
-                />
-                <polygon
-                    points="500,335 505,255 635,335"
-                    style={{
-                        width: 100,
-                        height: 100,
-                        marginLeft: "17%",
-                        marginTop: "25%",
-                        fill: "#747A9B",
-                        stroke: "white",
-                        strokeWidth: "2.5",
-                        opacity: 1
-                    }}
-                />
-                <rect
-                    x={100}
-                    y={300}
-                    ry={0}
-                    style={{
-                        width: 100,
-                        height: 100,
-                        marginLeft: "5%",
-                        marginTop: "20%",
-                        fill: "#747A9B",
-                        stroke: "white",
-                        strokeWidth: 2,
-                        opacity: 1
-                    }}
-                />
-            </svg>
+            
         <Outlet/></>
     );
 };

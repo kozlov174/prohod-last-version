@@ -72,9 +72,8 @@
     border-radius: 35px;
 }
 
-.full-name {
-    display: flex;
-    justify-content: space-between;
+.fullName {
+    width: 100%;
 }
 
 .passport {
@@ -139,19 +138,19 @@ legend {
     margin: 20px 0 20px 0;
 }
 
-.date {
+.issueDate {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #747A9B;
 }
 
-.date:default, textarea:default, input:default {
+.issueDate:default, textarea:default, input:default {
     outline: none;
     color: #747A9B;
 }
 
-.date:focus, textarea:focus, input:focus, input:checked, textarea:enabled {
+.issueDate:focus, textarea:focus, input:focus, input:checked, textarea:enabled {
     outline: none;
     color: white;
 }
@@ -225,20 +224,28 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
     .form-buttons {
         padding: 0;
-        margin: 6rem 0 0 3rem;
+        margin: 18.2vh 0 0 3rem;
     }
 
-    .form-button1 {
-        width: 250px;
-        height: 40px;
-        border: none;
+    .form-buttons span {
+        padding: 1vh 0 0 20vw;
         font-size: 24px;
-        padding: 0;
+    }
+
+    .front-folder {
+        width: 80%;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
         margin: 0;
+    }
+    
+    .back-folder {
+        display: none;
     }
 
     .anon-form {
-        margin: 8rem 6rem 0 3rem;
+        margin: 21vh 6rem 0 3rem;
         width: 600px;
         height: auto;
         border-radius: 0 35px 35px 35px;
@@ -253,7 +260,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 
     .full-name input {
-        width: 180px;
+        width: 100%;
         font-size: 20px;
         height: 40px;
         margin-bottom: 0;
@@ -272,7 +279,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         margin-bottom: 0;
     }
 
-    .passport .date {
+    .passport .issueDate {
         padding-left: 10px;
     }
 
@@ -350,21 +357,29 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
     .form-buttons {
         padding: 0;
-        margin: 6rem 0 0 2rem;
+        margin: 14vh 0 0 6vw;
     }
 
-    .form-button1 {
-        width: 250px;
-        height: 40px;
-        border: none;
-        font-size: 20px;
-        padding: 0;
+    .form-buttons span {
+        padding: 1vh 0 0 20vw;
+        font-size: 24px;
+    }
+
+    .front-folder {
+        width: 70%;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
         margin: 0;
+    }
+    
+    .back-folder {
+        display: none;
     }
 
     .anon-form {
         margin: 8rem 6rem 0 2rem;
-        width: 250px;
+        width: 50vh;
         height: auto;
         border-radius: 0 35px 35px 35px;
         padding: 40px;
@@ -378,10 +393,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 
     .full-name input {
-        width: 70px;
+        width: 100%;
         font-size: 8px;
         height: 30px;
         margin-bottom: 0;
+        margin-right: 10px;
     }
 
     .passport {
@@ -391,13 +407,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 
     .passport input {
-        width: 70px;
+        width: 50%;
         font-size: 8px;
         height: 30px;
+        margin-right: 10px;
         margin-bottom: 0;
     }
 
-    .passport .date {
+    .passport .issueDate {
         padding-left: 10px;
     }
 
@@ -405,6 +422,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         height: 20px;
         padding-top: 10px;
         font-size: 8px;
+        margin-right: 10px;
     }
 
     .visit-details {
@@ -413,16 +431,18 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 
     .visit-details input {
-        width: 70px;
+        width: 50%;
         font-size: 8px;
         height: 30px;
         margin-bottom: 0;
+        margin-right: 10px;
     }
 
     .visit-reason textarea {
         height: 20px;
         padding-top: 10px;
         font-size: 8px;
+        margin-right: 10px;
     }
 
     .email input {
@@ -430,6 +450,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         font-size: 8px;
         height: 30px;
         margin-bottom: 0;
+        margin-right: 10px;
     }
 
     .anon-form-checkbox-submit label{
@@ -445,6 +466,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         height: 30px;
         font-size: 16px;
         margin-top: 25px;
+        margin-right: 10px;
     }    
 }
 
@@ -470,18 +492,25 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
     .form-buttons {
         padding: 0;
-        margin: 6rem 0 0 2rem;
+        margin: 12vh 0 0 8vw;
     }
 
-    .form-button1 {
-        width: 250px;
-        height: 40px;
-        border: none;
-        font-size: 20px;
-        padding: 0;
+    .form-buttons span {
+        padding: 1vh 0 0 20vw;
+        font-size: 24px;
+    }
+
+    .front-folder {
+        width: 70%;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
         margin: 0;
     }
-
+    
+    .back-folder {
+        display: none;
+    }
     .anon-form {
         margin: 8rem 6rem 0 2rem;
         width: 250px;
@@ -498,7 +527,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 
     .full-name input {
-        width: 70px;
+        width: 100%;
         font-size: 8px;
         height: 30px;
         margin-bottom: 0;
@@ -517,7 +546,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         margin-bottom: 0;
     }
 
-    .passport .date {
+    .passport .issueDate {
         padding-left: 10px;
     }
 
@@ -565,5 +594,69 @@ input[type=date]::-webkit-calendar-picker-indicator {
         height: 30px;
         font-size: 16px;
         margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .form-buttons {
+        padding: 0;
+        margin: 13vh 0 0 6.8vw;
+    }
+
+    .form-buttons span {
+        padding: 1vh 0 0 20vw;
+        font-size: 24px;
+    }
+
+    .front-folder {
+        width: 70%;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+    
+    .back-folder {
+        display: none;
+    }
+
+    .anon-form {
+        margin: 8rem 6rem 0 3vh;
+        width: 250px;
+        height: auto;
+        border-radius: 0 35px 35px 35px;
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 389px) {
+    .form-buttons {
+        padding: 0;
+        margin: 11.5vh 0 0 4.5vw;
+    }
+
+    .form-buttons span {
+        padding: 1vh 0 0 20vw;
+        font-size: 24px;
+    }
+
+    .front-folder {
+        width: 70%;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+    
+    .back-folder {
+        display: none;
+    }
+
+    .anon-form {
+        margin: 14vh 6rem 0 2vh;
+        width: 250px;
+        height: auto;
+        border-radius: 0 35px 35px 35px;
+        padding: 40px;
     }
 }

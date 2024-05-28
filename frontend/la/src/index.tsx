@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import AuthPage from './App';
-
+import AdminPanel from './App';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );

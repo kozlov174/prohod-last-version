@@ -13,7 +13,7 @@ const PersonalAccount = () => {
             <div className="personal-account-container">
                 <div className="logo-personal-account">
                     <img className="logo-personal-acc" src={logo} />
-                    <button className="personal-account-enter-personal-acc">Фамилия И.О</button>
+                    <span className="personal-account-enter-personal-acc">Фамилия И.О</span>
                 </div>
                 <div className="personal-account">
                     <div className="personal-account-header">
@@ -24,8 +24,9 @@ const PersonalAccount = () => {
                             к заявкам
                         </button></Link>
                         <span className="personal-account-title">
-          создать<span className="personal-account-blue"> приглашение</span>
-        </span>
+                            создать<span className="personal-account-blue"> 
+                            приглашение</span>
+                        </span>
                     </div>
                     <div className="personal-account-text">
         <span>
@@ -39,11 +40,11 @@ const PersonalAccount = () => {
                         </button>
                     </div>
                 </div>
-                <svg className="line" width="100%" height={500} transform="translate(1 1)">
+                <svg className="line" width="100%" height={200} transform="translate(1 1)">
                     <line
-                        x1={60}
+                        x1={40}
                         y1={80}
-                        x2={1800}
+                        x2={1250}
                         y2={80}
                         style={{ stroke: "white", strokeWidth: 2 }}
                     />
