@@ -24,7 +24,7 @@ function Main() {
             <div className="service-information">
                 <div className="service-information-welcome">
                     Добро пожаловать <br /> на платформу{" "}
-                    <span className="service-information-welcome-blue">Pro</span>Ход
+                    <span className="service-information-welcome-blue">Про</span>Ход
                 </div>
                 <div className="service-information-welcome-text">
                     Сервис создан для избавления гостей от бумажной работы <br />

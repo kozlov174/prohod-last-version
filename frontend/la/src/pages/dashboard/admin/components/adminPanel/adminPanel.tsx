@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import './adminPanel.css';
 import Modal from '../adminPanel/adminPanelModal/adminPanelModal';
+import VisitorInfo from '../adminPanel/adminPanelVisitor/adminPanelVisitor';
 import { useState } from 'react';
 import logo from '../../../../../assets/images/logo.svg';
 import {Link,  Outlet} from "react-router-dom";
@@ -41,6 +42,10 @@ const AdminPanel = () => {
     const hideModal = () => {
         setShowModal(false);
     }
+    const [showVisModal, setShowVisModal] = useState<boolean>(false);
+    const hideVisModal = () => {
+        setShowVisModal(false);
+    }
     const {id} = useParams();
     const click = () => {};
 
@@ -56,52 +61,7 @@ const AdminPanel = () => {
                         style={{ stroke: "white", strokeWidth: 2 }}
                     />
             </svg>
-            <div className="visitor-information-window-container">
-                <div className="visitor-information-window">
-
-                <div className="admin-buttons">
-                    <div className="admin-folder-background">
-                        <span className='admin-folder-title'>заявка</span>
-                        <img className="admin-front-folder" src={admin_front_folder} />
-                    </div>
-                </div>
-                <img className="admin-back-folder" src={admin_back_folder} />
-
-                    <div className="visitor-information-header">
-                        <span className="visitor-information-title">
-                            <span className="visitor-information-blue">заявка</span> гостя
-                        </span>
-                    </div>
-                    <div className="full-name">
-                        <output title="" id='surname' placeholder="Фамилия">Ffffffffff</output>
-                        <output  title="" id='name' placeholder="Имя">Ffffffffff</output>
-                        <output  placeholder="Отчество">Ffffffffff</output>
-                    </div>
-                    <div className="passport">
-                        <output placeholder="Серия паспорта">4444</output>
-                        <output placeholder="Номер паспорта">666666</output>
-                        <output title="Когда выдан паспорт?">22.12.2000</output>
-                    </div>
-                    <div className="passport-textarea">
-                        <output className="textarea" placeholder="Кем выдан?">Отделением УФМС по Свердловской обл в г. Екатеринбурге</output>
-                    </div>
-                    <div className="visit-details">
-                        <output className="date" title="Дата посещения">12.11.2033</output>
-                        <output placeholder="Время посещения">12:35</output>
-                        <output placeholder="Кого посещаете?">Обабков И.Н.</output>
-                    </div>
-                    <div className="visit-reason">
-                        <output className="textarea" placeholder="Цель визита">Решение о коллаборации бизнеса "АНАНАС"</output>
-                    </div>
-                    <div className="email">
-                        <output placeholder="Email">reallynigga@gmail.com</output>
-                    </div>
-                    <div className="accept-visitor-buttons">
-                        <button className="accept-visitor">Принять</button>
-                        <button className="deny-visitor">Отклонить</button>
-                    </div>
-                </div>
-            </div>
+            
             <div className="header-folder">
                 <div className="logo-personal-account">
                     <img className="logo-admin" src={logo}/>
@@ -116,12 +76,16 @@ const AdminPanel = () => {
                         className="add-security-button">
                             добавить сотрудника
                     </button>
-                    <span className="add-security-title">список <span className="add-security-title-blue">заявок</span> на вход</span>
+                    <span className="add-security-title">список 
+                    <span className="add-security-title-blue">заявок</span> на вход</span>
                 </div>
 
                 <Modal active={showModal} onClose={hideModal}>
                 
                 </Modal>
+                <VisitorInfo visitorActive={showVisModal} visitorOnClose={hideVisModal}>
+
+                </VisitorInfo>
 
                 <div className="searching-string">
                     <div className="searching-string" />
@@ -139,8 +103,9 @@ const AdminPanel = () => {
                         <div className="application-date">Дата посещения</div>
                         <div className="application-status">Статус</div>
                     </div>
-                    <div className="inactive-application-string">
-                        <button className="application-number-btn" type="button" onClick={click}>1</button>
+                    <div className="inactive-application-string" onClick={() => setShowVisModal(true)}>
+                        
+                        <button className="application-number-btn" type="button">1</button>
                         <div className="application-id">1238uhw</div>
                         <div className="application-guest">Иванов И.И.</div>
                         <div className="application-host">Обабков И.Н.</div>
@@ -245,6 +210,9 @@ const AdminPanel = () => {
                     <button className="active-admin-panel-button1">Активные заявки</button>
                     <button className="admin-panel-button2">Отработанные заявки</button>
                 </div> */}
+                <VisitorInfo visitorActive={showVisModal} visitorOnClose={hideVisModal}>
+
+                </VisitorInfo>
                 <div className="active-application">
                     <div className="active-application-first-line">
                         <div className="application-number">#</div>
@@ -254,7 +222,7 @@ const AdminPanel = () => {
                         <div className="application-date">Дата посещения</div>
                         <div className="application-status">Статус</div>
                     </div>
-                    <div className="active-application-string">
+                    <div className="active-application-string" onClick={() => setShowVisModal(true)}>
                         <button className="application-number-btn">1</button>
                         <div className="application-id">1238uhw</div>
                         <div className="application-guest">Иванов И.И.</div>
@@ -264,48 +232,48 @@ const AdminPanel = () => {
                         <div className="space" />
                     </div>
                     <div className="active-application-string">
-                        <button className="application-number-btn">1</button>
+                        <button className="application-number-btn">2</button>
                         <div className="application-id">5438uhw</div>
                         <div className="application-guest">Вайнштейн Х.О.</div>
                         <div className="application-host">Обабков И.Н.</div>
                         <div className="application-date">12.12.2012</div>
-                        <div className="application-status">Отклонено</div>
+                        <div className="application-status">Ожидает</div>
                         <div className="space" />
                     </div>
                     <div className="active-application-string">
-                        <button className="application-number-btn">1</button>
+                        <button className="application-number-btn">3</button>
                         <div className="application-id">7238uhw</div>
                         <div className="application-guest">Риодежанейро И.О.</div>
                         <div className="application-host">Обабков И.Н.</div>
                         <div className="application-date">12.12.2012</div>
-                        <div className="application-status">Принято</div>
+                        <div className="application-status">Ожидает</div>
                         <div className="space" />
                     </div>
                     <div className="active-application-string">
-                        <button className="application-number-btn">1</button>
+                        <button className="application-number-btn">4</button>
                         <div className="application-id">4838uhw</div>
                         <div className="application-guest">Кепушенко И.О.</div>
                         <div className="application-host">Обабков И.Н.</div>
                         <div className="application-date">12.12.2012</div>
-                        <div className="application-status">Принято</div>
+                        <div className="application-status">Ожидает</div>
                         <div className="space" />
                     </div>
                     <div className="active-application-string">
-                        <button className="application-number-btn">1</button>
+                        <button className="application-number-btn">5</button>
                         <div className="application-id">1438uhw</div>
                         <div className="application-guest">Шизиков И.О.</div>
                         <div className="application-host">Обабков И.Н.</div>
                         <div className="application-date">12.12.2012</div>
-                        <div className="application-status">Принято</div>
+                        <div className="application-status">Ожидает</div>
                         <div className="space" />
                     </div>
                     <div className="active-application-string">
-                        <button className="application-number-btn">1</button>
+                        <button className="application-number-btn">6</button>
                         <div className="application-id">2438uhw</div>
                         <div className="application-guest">Петров И.О.</div>
                         <div className="application-host">Обабков И.Н.</div>
                         <div className="application-date">12.12.2012</div>
-                        <div className="application-status">Отклонено</div>
+                        <div className="application-status">Ожидает</div>
                         <div className="space" />
                     </div>
                     <div className="active-application-str-switch">

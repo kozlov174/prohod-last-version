@@ -51,7 +51,7 @@
     border-radius: 35px;
     font-family: Gilroy;
     position: absolute;
-    padding: 4em 0 0 4em;
+    padding: 7vh 0 0 3.5em;
 }
 
 .personal-account-back {
@@ -61,7 +61,7 @@
     border: none;
     font-family: Gilroy;
     font-size: 20px;
-    height: 60px;
+    height: 40px;
     width: 200px;
     border-radius: 35px;
     text-align: center;

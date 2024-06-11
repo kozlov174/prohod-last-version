@@ -33,7 +33,7 @@ services:
       context: ./frontend/la/
       dockerfile: Dockerfile
     ports:
-      - "80:4000"
+      - "80:3000"
     restart: always
   
   database:

@@ -33,6 +33,7 @@ const Modal = ({active, onApply, onReject, onClose, children}: PropsWithChildren
                     </div>
                     <div className="email">
                         <input type="text" required placeholder="Email" />
+                        <input type="text" required placeholder="Должность" />
                     </div>
                     <div className="enter-data">
                         <input type="text" required placeholder="Логин" />

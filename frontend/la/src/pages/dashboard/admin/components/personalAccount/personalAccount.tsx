@@ -24,14 +24,14 @@ const PersonalAccount = () => {
                             к заявкам
                         </button></Link>
                         <span className="personal-account-title">
-                            создать<span className="personal-account-blue"> 
+                            создать <span className="personal-account-blue"> 
                             приглашение</span>
                         </span>
                     </div>
                     <div className="personal-account-text">
         <span>
           Здесь Вы можете создать ссылку-приглашение, при отправлении которой
-          человек сразу будет отмечен как Ваш посетитель.
+          человек сразу будет отмечен<br/> как Ваш посетитель.
         </span>
                     </div>
                     <div className="personal-account-link-button">

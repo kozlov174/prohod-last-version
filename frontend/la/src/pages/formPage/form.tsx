@@ -69,12 +69,10 @@ const FormPage = () => {
             return response;
         })
         .then(data => {
-            // Обработка ответа от сервера
             console.log(data);
             alert("Форма успешно отправлена. Ожидайте заключения, оно придет к Вам на почту в течении трех дней.");
           })
           .catch(error => {
-            // Обработка ошибки
             console.error(error);
           });
       }
@@ -154,7 +152,7 @@ const FormPage = () => {
                         <input
                             id='visitTimeDateInput'
                             type="date"
-                            className="date"
+                            className="issueDate"
                             required
                             title="Дата посещения"
                         />
